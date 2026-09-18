@@ -1,5 +1,20 @@
 def group_by_signature(words: list) -> list:
-    pass
+    def group_by_signature(words: list) -> list:
+    dict_ = {}
+    for i in words:
+        sorted_ ="".join(sorted(i))
+        if sorted_ not in dict_ and sorted_ !="":
+            dict_[sorted_] = []
+            
+    for j in dict_.keys():
+        for i in words:
+            if j =="".join(sorted(i)) and j !="":
+                dict_[j].append(i)
+    result = []
+    for i in dict_.values():
+        result.append(i)
+        
+    return result
 
 if __name__ == "__main__":
     # Example 1
