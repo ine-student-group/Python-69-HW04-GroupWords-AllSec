@@ -1,5 +1,11 @@
 def group_by_signature(words: list) -> list:
-    pass
+    groups = {}
+    for word in words:
+        if not word:
+            continue
+        key = tuple(sorted(word))
+        groups.setdefault(key, []).append(word)
+    return list(groups.values())
 
 if __name__ == "__main__":
     # Example 1
